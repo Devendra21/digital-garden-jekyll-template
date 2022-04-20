@@ -1,0 +1,33 @@
+{
+  "name": "digital-garden-jekyll-template",
+  "version": "1.0.0",
+  "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/8cfa8785-8df8-4aad-ad35-8f1c790b8baf/deploy-status)](https://app.netlify.com/sites/digital-garden-jekyll-template/deploys)",
+  "main": "postcss.config.js",
+  "scripts": {
+    "jekyll:dev": "bundle exec jekyll serve --incremental --trace --watch",
+    "jekyll:build": "JEKYLL_ENV=production bundle exec jekyll build",
+    "css:dev": "postcss styles.scss --output styles.css --watch",
+    "css:build": "NODE_ENV=production postcss styles.scss --output styles.css",
+    "dev": "concurrently --kill-others \"npm run jekyll:dev\" \"npm run css:dev\"",
+    "build": "npm run css:build && npm run jekyll:build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Devendra21/digital-garden-jekyll-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Devendra21/digital-garden-jekyll-template/issues"
+  },
+  "homepage": "https://github.com/Devendra21/digital-garden-jekyll-template#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.4",
+    "concurrently": "^7.1.0",
+    "cssnano": "^5.1.7",
+    "postcss": "^8.4.12",
+    "postcss-cli": "^9.1.0",
+    "tailwindcss": "^3.0.24"
+  }
+}
